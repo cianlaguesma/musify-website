@@ -1,10 +1,9 @@
 import React from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 function Home(props) {
   return (
     <>
-      <img className="background" src="assets/images/background2.jpg" />
-
       <div id="lefthalf">
         <div className="container">
           <p id="homeText">
@@ -15,9 +14,11 @@ function Home(props) {
       </div>
       <div id="righthalf">
         <div className="container">
-          <Button type="submit" color="primary" outline color="white">
-            Download Now
-          </Button>
+          <Link to="/download">
+            <Button type="submit" color="primary" outline color="white">
+              Download Now
+            </Button>
+          </Link>
         </div>
       </div>
     </>

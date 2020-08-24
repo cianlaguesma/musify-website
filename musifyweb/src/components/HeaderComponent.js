@@ -14,12 +14,13 @@ class Header extends Component {
     this.state = {
       isNavOpen: false,
     };
+
+    this.toggleNav = this.toggleNav.bind(this);
   }
   toggleNav() {
     this.setState({
       isNavOpen: !this.state.isNavOpen,
     });
-    this.toggleNav = this.toggleNav.bind(this);
   }
   render() {
     return (
@@ -58,6 +59,8 @@ class Header extends Component {
             </Collapse>
           </Navbar>
         </div>
+        <div id="darkBack"></div>
+        <img className="background" src="assets/images/background2.jpg" />
       </>
     );
   }

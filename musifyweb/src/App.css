@@ -2,12 +2,33 @@ body,
 html {
   font-family: Futura Md BT;
 }
+#darkBack {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 2;
+  opacity: 1;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+}
+.background {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  opacity: 1;
+  left: 0px;
+  top: 0px;
+}
 .navbar-dark {
   background-color: #000000;
-  z-index: 3;
+  z-index: 5;
 }
 .nav-link {
   margin-right: 25px;
+  z-index: 5;
 }
 #logo {
   margin-top: -5px;
@@ -32,7 +53,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 90px;
+  font-size: 85px;
   color: white;
 }
 #freeWord {
@@ -67,38 +88,462 @@ button.btn {
   width: 364px;
   height: 82px;
   font-weight: bold;
+
+  box-shadow: 3px 3px 5px black;
 }
 button.btn:hover {
   background-color: #0077ff;
 }
-.background {
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 1;
-  opacity: 1;
-  left: 0px;
-  top: 0px;
+.container#downloadComponent {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#downloadTextDiv {
+  background-color: transparent;
+}
+p#downloadText {
+  font-size: 70px;
+  text-align: center;
+  color: white;
+  padding-bottom: 50px;
+}
+#downloadButtonsBackground {
+  height: 500px;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+#buttonsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#buttonsCont * {
+  margin-bottom: 20px;
 }
 
+.container#aboutComponentContainer {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 12px;
+}
+#aboutUsSection {
+  display: flex;
+  flex-direction: row;
+  margin-left: -200px;
+  margin-right: -200px;
+}
+#aboutUsWord {
+  float: left;
+  background-color: #6c9ade;
+  margin-top: 60px;
+  width: 518px;
+  height: 400px;
+  text-align: center;
+  position: relative;
+}
+#aboutUsWord p {
+  margin: 0;
+  font-size: 60px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#aboutUsInfo {
+  float: left;
+  background-color: #444444;
+  margin-top: 60px;
+  width: 957px;
+  height: 400px;
+  text-align: center;
+  position: relative;
+}
+#aboutUsInfo p {
+  margin: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+#contactUsSection {
+  display: flex;
+  flex-direction: row;
+  margin-left: -200px;
+  margin-right: -200px;
+}
+#contactUsWord {
+  float: left;
+  background-color: #eaaa4b;
+  margin-top: 20px;
+  width: 518px;
+  height: 400px;
+  text-align: center;
+  position: relative;
+}
+#contactUsWord p {
+  margin: 0;
+  font-size: 60px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+#contactUsInfo {
+  float: left;
+  margin-top: 20px;
+  width: 957px;
+  height: 400px;
+  position: relative;
+}
+.col-md-10 input {
+  width: 930px;
+  margin: 10px 0px 0px 10px;
+}
+.col-md-10 textarea {
+  width: 930px;
+  height: 250px;
+  margin: 10px 0px 0px 10px;
+}
+
+@media (min-width: 1400px) and (max-width: 1500px) {
+  #aboutUsSection {
+    margin-right: -150px;
+    margin-left: -150px;
+  }
+  #aboutUsWord {
+    width: 450px;
+  }
+  #aboutUsInfo {
+    width: 930px;
+  }
+  #contactUsSection {
+    margin-right: -150px;
+    margin-left: -150px;
+  }
+  #contactUsWord {
+    width: 450px;
+  }
+  #contactUsInfo {
+    width: 930px;
+  }
+  .col-md-10 input {
+    width: 900px;
+  }
+  .col-md-10 textarea {
+    width: 900px;
+  }
+}
 /********** Large devices only **********/
-@media (min-width: 1200px) {
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  #aboutUsSection {
+    margin-right: -50px;
+    margin-left: -50px;
+  }
+  #aboutUsWord {
+    width: 350px;
+    height: 375px;
+  }
+  #aboutUsInfo {
+    width: 770px;
+    height: 375px;
+  }
+  #contactUsSection {
+    margin-right: -50px;
+    margin-left: -50px;
+  }
+  #contactUsWord {
+    width: 350px;
+    height: 375px;
+  }
+  #contactUsInfo {
+    width: 770px;
+    height: 375px;
+  }
+  .col-md-10 input {
+    width: 750px;
+  }
+  .col-md-10 textarea {
+    width: 750px;
+    height: 230px;
+  }
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
   #lefthalf .container {
-    font-size: 50px;
+    font-size: 65px;
+  }
+  #aboutUsSection {
+    margin-right: -50px;
+    margin-left: -50px;
+  }
+  #aboutUsWord {
+    width: 350px;
+    height: 300px;
+  }
+  #aboutUsInfo {
+    width: 770px;
+    height: 300px;
+  }
+  #contactUsSection {
+    margin-right: -50px;
+    margin-left: -50px;
+  }
+  #contactUsWord {
+    width: 350px;
+    height: 300px;
+  }
+  #contactUsInfo {
+    width: 708px;
+    height: 300px;
+  }
+  .col-md-10 input {
+    width: 685px;
+  }
+  .col-md-10 textarea {
+    width: 685px;
+    height: 160px;
   }
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
+  #lefthalf .container {
+    font-size: 50px;
+  }
+  button.btn {
+    width: 252px;
+    height: 69px;
+  }
+  .container#aboutComponentContainer {
+    align-items: center;
+  }
+  #aboutUsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #aboutUsWord {
+    background-color: #6c9ade;
+    margin-top: 700px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  #aboutUsInfo {
+    background-color: #444444;
+    margin-top: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+  #aboutUsInfo p {
+    font-size: 15px;
+  }
+  #contactUsSection {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  #contactUsWord {
+    width: 400px;
+    height: 300px;
+  }
+  #contactUsInfo {
+    width: 400px;
+    height: 300px;
+  }
+  .col-md-10 input {
+    margin: 0;
+    width: 400px;
+  }
+  .col-md-10 textarea {
+    width: 400px;
+    margin: 0;
+    height: 160px;
+  }
+  .form-group .col-md-10 {
+    margin-left: -15px;
+  }
 }
 
 /********** Extra small devices only **********/
 @media (min-width: 577px) and (max-width: 767px) {
+  #lefthalf .container {
+    font-size: 30px;
+  }
+  button.btn {
+    width: 252px;
+    height: 69px;
+  }
+  #lefthalf .container {
+    font-size: 50px;
+  }
+  button.btn {
+    width: 252px;
+    height: 69px;
+  }
+  .container#aboutComponentContainer {
+    align-items: center;
+  }
+  #aboutUsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #aboutUsWord {
+    background-color: #6c9ade;
+    margin-top: 700px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  #aboutUsInfo {
+    background-color: #444444;
+    margin-top: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+  #aboutUsInfo p {
+    font-size: 15px;
+  }
+  #contactUsSection {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  #contactUsWord {
+    width: 400px;
+    height: 300px;
+  }
+  #contactUsInfo {
+    width: 400px;
+    height: 300px;
+  }
+  .form-group .col-md-10 {
+    margin-left: -15px;
+  }
+  .col-md-10 input {
+    margin: 0;
+    width: 400px;
+  }
+  .col-md-10 textarea {
+    width: 400px;
+    margin: 0;
+    height: 160px;
+  }
+  .form-group .col-md-10 {
+    margin-left: -15px;
+  }
 }
 
 @media (max-width: 576px) {
+  #lefthalf .container {
+    font-size: 20px;
+  }
+  button.btn {
+    width: 200px;
+    height: 50px;
+  }
+  #lefthalf .container {
+    font-size: 50px;
+  }
+  button.btn {
+    width: 252px;
+    height: 69px;
+  }
+  .container#aboutComponentContainer {
+    align-items: center;
+  }
+  #aboutUsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #aboutUsWord {
+    background-color: #6c9ade;
+    margin-top: 700px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  #aboutUsInfo {
+    background-color: #444444;
+    margin-top: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+  #aboutUsInfo p {
+    font-size: 15px;
+  }
+  #contactUsSection {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  #contactUsWord {
+    width: 400px;
+    height: 300px;
+  }
+  #contactUsInfo {
+    width: 400px;
+    height: 300px;
+  }
+  .col-md-10 input {
+    margin: 0;
+    width: 400px;
+  }
+  .col-md-10 textarea {
+    width: 400px;
+    margin: 0;
+    height: 160px;
+  }
+  .form-group .col-md-10 {
+    margin-left: -15px;
+  }
 }
