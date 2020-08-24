@@ -27,7 +27,7 @@ class Header extends Component {
       <>
         <div>
           <Navbar dark expand="md">
-            <NavbarBrand className="mr-auto" href="/">
+            <NavbarBrand className="mr-auto" href="/home">
               <img
                 src="assets/images/icon.png"
                 height="40"
